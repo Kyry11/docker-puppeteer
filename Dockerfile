@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:10.6.0
 
 LABEL maintainer="yeongjinnn@gmail.com"
 
@@ -32,7 +32,7 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /node_modules
 
-RUN npm install -g ionic cordova
+RUN npm install -g npm@latest ionic cordova
 
 # Run user as non privileged.
 USER pptruser
