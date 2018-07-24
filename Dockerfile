@@ -32,6 +32,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /node_modules
 
+RUN npm install -g ionic cordova
+
 # Run user as non privileged.
 USER pptruser
 
